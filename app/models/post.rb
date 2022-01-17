@@ -3,11 +3,16 @@ class Post < ApplicationRecord
   has_many :comments
   has_many :likes
 
-  def udpate_post_counter_for_a_user
-    user.update(posts_counter: user.posts.count)
+  after_save :udpate_post_counter_for_a_user
+
+  def recent_comments_from_user
+    comments.order(created_at: :desc).limit(5)
   end
 
-  def recent_posts_from_user
-    user.posts.order(created_at: :desc).limit(5)
+  private
+
+  def udpate_post_counter_for_a_user
+    author.increment!(:posts_counter)
   end
+
 end
