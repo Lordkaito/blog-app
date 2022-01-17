@@ -14,5 +14,4 @@ class Post < ApplicationRecord
   def udpate_post_counter_for_a_user
     author.increment!(:posts_counter)
   end
-
 end
