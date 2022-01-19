@@ -16,7 +16,9 @@
   <div class="post-1 post">
     <div class="post-info">
       <h4 class="post-title">
-        Post title
+        <% @posts.each do |post|%>
+        <%= post.title%>
+        <%end%>
       </h4>
       <p class="post-text">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua sed do eiusmod tempor incididunt ut labore et dolore magna aliqua sed do eiusmod tempor incididunt ut labore et dolore magna aliqua sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...

@@ -10,8 +10,13 @@ class Post < ApplicationRecord
   end
 
   private
-
   def udpate_post_counter_for_a_user
-    author.increment!(:posts_counter)
+    user.update(posts_counter: user.posts.count)
   end
+
+  Post.create(title: 'First post', text: 'This is the first post', comments_counter: 0, likes_counter: 0, user_id: 1)
+
+  Post.create(title: 'Second post', text: 'This is the second post', comments_counter: 0, likes_counter: 0, user_id: 1)
+
+  Post.create(title: 'Third post', text: 'This is the third post', comments_counter: 0, likes_counter: 0, user_id: 2)
 end

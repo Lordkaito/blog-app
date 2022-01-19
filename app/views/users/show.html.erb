@@ -25,66 +25,19 @@
       </p>
     </div>
   </div>
-  <div class="post">
-    <div class="post-1-title post-title">
-      <h5>
-        Post #1
-      </h5>
-    </div>
-    <div class="post-1-text post-text">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-      <div class="comments-likes">
-        <p class="comments-count">
-          Comments: X
-        </p>
-        <p class="likes-count">
-          Likes: Y
-        </p>
+  <div class="post-info">
+    <% @user.recent_posts_from_user.each do |post| %>
+    <div class="post-container">
+        <div class="post-title">
+          <%= post.title %>
+        </div>
+        <div class="post-text">
+          <%= post.text %>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="post">
-    <div class="post-2-title post-title">
-      <h5>
-        Post #2
-      </h5>
-    </div>
-    <div class="post-2-text post-text">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-      <div class="comments-likes">
-        <p class="comments-count">
-          Comments: X
-        </p>
-        <p class="likes-count">
-          Likes: Y
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="post">
-    <div class="post-3-title post-title">
-      <h5>
-        Post #3
-      </h5>
-    </div>
-    <div class="post-3-text post-text">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-      <div class="comments-likes">
-        <p class="comments-count">
-          Comments: X
-        </p>
-        <p class="likes-count">
-          Likes: Y
-        </p>
-      </div>
-    </div>
+    <% end %>
   </div>
 
-  <a href="show/posts">See all posts </a>
+
+  <a href="<%=@user.id%>/posts">See all posts </a>
 </section>
