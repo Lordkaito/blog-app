@@ -1,2 +1,52 @@
-<h1>Posts#index</h1>
-<p>This is going to show all posts from a given user</p>
+<section class="show-posts">
+  <div class="user-container">
+    <div class="picture">
+      <div class="empty-div">
+      </div>
+    </div>
+    <div class="user-name">
+        <h1>
+          <%=@user.name%>
+        </h1>
+        <p>
+          Number of posts: <%= @user.posts_counter %>
+        </p>
+    </div>
+  </div>
+  <% @posts.each do |post| %>
+    <div class="post">
+      <div class="post-info-container">
+        <h4 class="post-title">
+          <%= post.title %>
+        </h4>
+        <p class="post-text">
+          <%= post.text %>
+        </p>
+        <div class="comms-likes">
+          <p class="comments-counter">
+            Comments: <%= post.comments_counter %>
+          </p>
+          <p class="likes-counter">
+            Likes: <%= post.likes_counter %>
+          </p>
+        </div>
+      </div>
+      <div class="comments">
+          <% post.recent_comments_from_user.each do |comment| %>
+            <div class="single-comment">
+              <p>
+                Username: <%= comment.user.name %>
+              </p>
+              <p>
+                Comment: <%= comment.text %>
+              </p>
+            </div>
+          <%end%>
+      </div>
+        <div class="link">
+          <a href="posts/<%=@user.id%>">Pagination</a>
+        </div>
+    </div>
+  <% end %>
+
+</section>

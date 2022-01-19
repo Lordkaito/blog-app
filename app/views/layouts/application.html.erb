@@ -9,8 +9,27 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <a href="/">Logo</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
   <body>
     <%= yield %>
   </body>
+
+  <footer>
+    <div>
+      <ul>
+        <li>
+          &copy;Microverse Inc.
+        </li>
+      </ul>
+    </div>
+  </footer>
 </html>
