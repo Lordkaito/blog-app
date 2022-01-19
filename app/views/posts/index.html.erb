@@ -6,79 +6,47 @@
     </div>
     <div class="user-name">
         <h1>
-          Name
+          <%=@user.name%>
         </h1>
         <p>
-          Number os posts: X
+          Number of posts: <%= @user.posts_counter %>
         </p>
     </div>
   </div>
-  <div class="post-1 post">
-    <div class="post-info">
-      <h4 class="post-title">
-        <% @posts.each do |post|%>
-        <%= post.title%>
-        <%end%>
-      </h4>
-      <p class="post-text">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua sed do eiusmod tempor incididunt ut labore et dolore magna aliqua sed do eiusmod tempor incididunt ut labore et dolore magna aliqua sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
-      </p>
-      <div class="comms-likes">
-        <p class="comments-counter">
-          Comments: X
+  <% @posts.each do |post| %>
+    <div class="post">
+      <div class="post-info-container">
+        <h4 class="post-title">
+          <%= post.title %>
+        </h4>
+        <p class="post-text">
+          <%= post.text %>
         </p>
-        <p class="likes-counter">
-          Likes: Y
-        </p>
+        <div class="comms-likes">
+          <p class="comments-counter">
+            Comments: <%= post.comments_counter %>
+          </p>
+          <p class="likes-counter">
+            Likes: <%= post.likes_counter %>
+          </p>
+        </div>
       </div>
+      <div class="comments">
+          <% post.recent_comments_from_user.each do |comment| %>
+            <div class="single-comment">
+              <p>
+                Username: <%= comment.user.name %>
+              </p>
+              <p>
+                Comment: <%= comment.text %>
+              </p>
+            </div>
+          <%end%>
+      </div>
+        <div class="link">
+          <a href="posts/<%=@user.id%>">Pagination</a>
+        </div>
     </div>
-    <div class="comments-post-1 comments">
-      <div>
-        <p>Username: Comment 1</p>
-      </div>
-      <div>
-        <p>Username: Comment 2</p>
-      </div>
-      <div>
-        <p>Username: Comment 3</p>
-      </div>
-      <div>
-        <p>Username: Comment 4</p>
-      </div>
-    </div>
-  </div>
-  <div class="post-2 post">
-    <div class="post-info">
-      <h4 class="post-title">
-        Post title
-      </h4>
-      <p class="post-text">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua sed do eiusmod tempor incididunt ut labore et dolore magna aliqua sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
-      </p>
-      <div class="comms-likes">
-        <p class="comments-counter">
-          Comments: X
-        </p>
-        <p class="likes-counter">
-          Likes: Y
-        </p>
-      </div>
-    </div>
-    <div class="comments-post-2 comments">
-      <div>
-        <p>Username: Comment 1</p>
-      </div>
-      <div>
-        <p>Username: Comment 2</p>
-      </div>
-      <div>
-        <p>Username: Comment 3</p>
-      </div>
-      <div>
-        <p>Username: Comment 4</p>
-      </div>
-    </div>
-  </div>
+  <% end %>
 
-  <a href="posts/show">Pagination</a>
 </section>

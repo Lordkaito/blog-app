@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
   def index
-    # show all posts for the given user
-    # @posts = @user.all_posts_from_user
-
+    @user = User.find(params[:id])
+    @posts = Post.find_by_sql("SELECT * FROM posts WHERE user_id = #{params[:id]} limit 5");
   end
 
-  def show; end
+  def show
+    @posts = Post.find_by_sql("SELECT * FROM posts WHERE user_id = #{params[:id]}");
+  end
 end

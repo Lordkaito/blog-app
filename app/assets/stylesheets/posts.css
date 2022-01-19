@@ -8,6 +8,13 @@
   margin: auto;
 }
 
+.post {
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .post-title,
 .comments,
 .post-text,
@@ -24,7 +31,21 @@
 }
 
 .post-info {
-  border-bottom: 1px solid black;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin: 10px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .comments {
@@ -33,17 +54,19 @@
   flex-direction: column;
 }
 
-.single-post-container {
+.single-post {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 10px;
+  width: 100%;
 }
 
 .post-container,
 .comments-container {
   border: 1px solid black;
+  width: 100%;
 }
 
 .user-post,
@@ -54,4 +77,13 @@
 
 .comments-container {
   width: 100%;
+}
+/* 
+.single-post {
+  margin: 10px;
+  width: 100%;
+} */
+
+.commms-in-post {
+  padding: 10px;
 }

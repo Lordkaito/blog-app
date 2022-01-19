@@ -9,15 +9,15 @@
           <%= @user.name %>
         </h1>
         <p>
-          Number of Posts: <%= @user.posts_counter%>
+          Number of posts: <%= @user.posts_counter%>
         </p>
       </div>
   </div>
   <div class="bio">
     <div class="bio-title">
-      <h5>
+      <h4>
         Bio
-      </h5>
+      </h4>
     </div>
     <div class="bio-text">
       <p>
@@ -29,10 +29,10 @@
     <% @user.recent_posts_from_user.each do |post| %>
     <div class="post-container">
         <div class="post-title">
-          <%= post.title %>
+          <h4><%= post.title %></h4>
         </div>
         <div class="post-text">
-          <%= post.text %>
+          <p><%= post.text %></p>
         </div>
       </div>
     <% end %>
