@@ -10,7 +10,6 @@
 
 .post {
   display: flex;
-  align-items: left;
   justify-content: center;
   flex-direction: column;
 }
@@ -78,11 +77,6 @@
 .comments-container {
   width: 100%;
 }
-/* 
-.single-post {
-  margin: 10px;
-  width: 100%;
-} */
 
 .commms-in-post {
   padding: 10px;
