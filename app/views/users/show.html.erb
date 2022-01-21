@@ -1,4 +1,9 @@
 <section class="user-show">
+<div>
+  <p>
+    <%= link_to "Create post", new_user_post_path(@user.id)%>
+  </p>
+</div>
   <div class="user-container">
       <div class="picture">
         <div class="empty-div">
@@ -39,5 +44,5 @@
   </div>
 
 
-  <a href="<%=@user.id%>/posts">See all posts </a>
+  <p> <%= link_to "See all posts", user_posts_path(@user.id) %></p>
 </section>

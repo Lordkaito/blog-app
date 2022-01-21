@@ -17,7 +17,7 @@
     <div class="post">
       <div class="post-info-container">
         <h4 class="post-title">
-          <%= post.title %>
+          <%= link_to post.title, user_post_path(@user.id, post.id) %>
         </h4>
         <p class="post-text">
           <%= post.text %>
@@ -43,9 +43,6 @@
             </div>
           <%end%>
       </div>
-        <div class="link">
-          <a href="posts/<%=@user.id%>">Pagination</a>
-        </div>
     </div>
   <% end %>
 

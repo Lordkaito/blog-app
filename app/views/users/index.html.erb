@@ -6,7 +6,7 @@
     </div>
     <div class="user-name">
       <h1>
-        <a href="/users/<%=user.id%>"><%= user.name %></a>
+        <%= link_to user.name, user_path(user.id) %>
       </h1>
       <p>
         <%= user.posts_counter%>

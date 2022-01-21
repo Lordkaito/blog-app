@@ -10,6 +10,7 @@ class Post < ApplicationRecord
   end
 
   def show_all_comments_from_user
+    puts comments
     comments.order(created_at: :desc)
   end
 
