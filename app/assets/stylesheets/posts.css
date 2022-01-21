@@ -81,3 +81,11 @@
 .commms-in-post {
   padding: 10px;
 }
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px;
+}

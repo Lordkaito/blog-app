@@ -19,10 +19,15 @@
         <div class="single-comment">
           <div class="comment">
               <% @comments.each do |comment| %>
-                <p>Username: <%= comment.user.name%></p>
-                <p>Comment: <%= comment.text%></p>
+                <div class="username">
+                  <h4><%= comment.user.name%></h4>
+                </div>
+                <div>
+                  <p>Comment: <%= comment.text%></p>
+                </div>
               <%end%>
           </div>
+          <a>Add comment </a>
         </div>
       </div>
     </div>
