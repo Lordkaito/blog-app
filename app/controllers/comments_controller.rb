@@ -1,7 +1,6 @@
 class CommentsController < ApplicationController
   def new
     @comment = Comment.new
-    # @commenttt = Comment.find(params[:comment_id])
   end
 
   def create
@@ -11,8 +10,10 @@ class CommentsController < ApplicationController
     respond_to do |format|
       format.html do
         if @comment.save
+          flash[:notice] = 'Comment was successfully created.'
           redirect_to user_post_path(@comment.post.user.id, @comment.post.id)
         else
+          flash[:notice] = 'Comment was not created.'
           render :new
         end
       end
