@@ -18,16 +18,11 @@
       <div class="comments-container">
         <div class="single-comment">
           <div class="comment">
-              <% @comments.each do |comment| %>
-                <div class="username">
-                  <h4><%= comment.user.name%></h4>
-                </div>
-                <div>
-                  <p>Comment: <%= comment.text%></p>
-                </div>
-              <%end%>
+              <%= render @post.comments%>
           </div>
-          <a>Add comment </a>
+          <p>
+          <%= link_to 'Add comment', new_user_post_comment_path(@post.user.id, @post.id) %>
+          </p>
         </div>
       </div>
     </div>
