@@ -8,8 +8,12 @@
     </p>
   </div>
   <div class="like">
-      <%= link_to like_comment_url, method: :post do %>
-        <i class="far fa-heart"></i>
-      <% end %>
+    <%= form_with url: user_post_likes_url(comment.user.id, @post.id), scope: :like do |form| %>
+      <%if @like%>
+        <i class="fas fa-heart"></i>
+      <%else%>
+        <%= form.submit "Like"%>
+      <%end%>
+    <%end%>
   </div>
 </div>
