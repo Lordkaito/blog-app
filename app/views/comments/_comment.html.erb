@@ -7,4 +7,9 @@
       <%= comment.text %>
     </p>
   </div>
+  <div class="like">
+      <%= link_to like_comment_url, method: :post do %>
+        <i class="far fa-heart"></i>
+      <% end %>
+  </div>
 </div>

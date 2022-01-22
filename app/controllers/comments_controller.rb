@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   def new
     @comment = Comment.new
+    # @commenttt = Comment.find(params[:comment_id])
   end
 
   def create
@@ -19,6 +20,7 @@ class CommentsController < ApplicationController
   end
 
   private
+
   def comment_params
     params.require(:comment).permit(:text)
   end
