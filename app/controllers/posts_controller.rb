@@ -15,12 +15,8 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.new(post_params)
 
-    if @post.comments_counter.nil?
-      @post.comments_counter = 0
-    end
-    if @post.likes_counter.nil?
-      @post.likes_counter = 0
-    end
+    @post.comments_counter = 0 if @post.comments_counter.nil?
+    @post.likes_counter = 0 if @post.likes_counter.nil?
 
     respond_to do |format|
       format.html do

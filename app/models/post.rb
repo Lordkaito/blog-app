@@ -7,7 +7,6 @@ class Post < ApplicationRecord
   validates :comments_counter, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :likes_counter, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
-
   after_save :udpate_post_counter_for_a_user
 
   def recent_comments_from_user

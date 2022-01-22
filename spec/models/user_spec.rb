@@ -22,11 +22,9 @@ RSpec.describe User, type: :model do
 
   describe 'User methods' do
     it 'recent_posts_from_user should work' do
-      subject.posts.create!(title: 'Title 1', text: 'Post text content', likes_counter: 0,
-                            comments_counter: 0)
-      subject.posts.create!(title: 'Title 2', text: 'Post text content', likes_counter: 0,
-                            comments_counter: 0)
-      post3 = subject.posts.create!(title: 'Title 3', text: 'Post text content', likes_counter: 0, comments_counter: 0)
+      subject.posts.create!(title: 'Title 1', text: 'Post text content', likes_counter: 0, comments_counter: 0)
+      subject.posts.create!(title: 'Title 2', text: 'Post text content', likes_counter: 0, comments_counter: 0)
+      subject.posts.create!(title: 'Title 3', text: 'Post text content', likes_counter: 0, comments_counter: 0)
 
       posts = subject.recent_posts_from_user
       expect(posts.length).to eql 3

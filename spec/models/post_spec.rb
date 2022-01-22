@@ -39,12 +39,12 @@ RSpec.describe Post, type: :model do
 
   describe 'Post methods' do
     it 'Should test the functionality of five_recent_posts' do
-      @user_2 = User.create!(name: 'Peter', photo: 'Link to photo', bio: 'Text', posts_counter: 1)
-      first_comment = @user_2.comments.create!(text: 'First comment made by Peter', post: subject)
-      second_comment = @user_2.comments.create!(text: 'Second comment made by Peter', post: subject)
-      third_comment = @user_2.comments.create!(text: 'Third comment made by Peter', post: subject)
-      fourth_comment = @user_2.comments.create!(text: 'Fourth comment made by Peter', post: subject)
-      fifth_comment = @user_2.comments.create!(text: 'Fifth comment made by Peter', post: subject)
+      @user2 = User.create!(name: 'Peter', photo: 'Link to photo', bio: 'Text', posts_counter: 1)
+      first_comment = @user2.comments.create!(text: 'First comment made by Peter', post: subject)
+      second_comment = @user2.comments.create!(text: 'Second comment made by Peter', post: subject)
+      third_comment = @user2.comments.create!(text: 'Third comment made by Peter', post: subject)
+      fourth_comment = @user2.comments.create!(text: 'Fourth comment made by Peter', post: subject)
+      fifth_comment = @user2.comments.create!(text: 'Fifth comment made by Peter', post: subject)
 
       total_comments = subject.recent_comments_from_user
       expect(total_comments.length).to eql 5
