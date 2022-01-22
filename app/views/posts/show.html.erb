@@ -1,32 +1,29 @@
 <section class="pagination">
-  <% @posts.each do |post| %>
     <div class="single-post">
       <div class="post-container">
         <div class="title">
           <h4 class="user-post">
-            <%=post.title%> by <%=post.user.name%>
+            <%=@post.title%> by <%=@post.user.name%>
           </h4>
           <p class="comms-likes">
-            Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>
+            Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %>
           </p>
         </div>
         <div class="post-content">
           <p class="post-text">
-            <%= post.text %>
+            <%= @post.text %>
           </p>
         </div>
       </div>
       <div class="comments-container">
         <div class="single-comment">
           <div class="comment">
-              <% post.show_all_comments_from_user.each do |comment|%>
-                <p class="comms-in-post">
-                <%= comment.user.name %>: <%= comment.text %>
-                </p>
-              <% end %>
+              <%= render @post.comments%>
           </div>
+          <p>
+          <%= link_to 'Add comment', new_user_post_comment_path(@post.user.id, @post.id) %>
+          </p>
         </div>
       </div>
     </div>
-  <% end %>
 </section>

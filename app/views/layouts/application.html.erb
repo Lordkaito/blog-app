@@ -8,12 +8,13 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script src="https://kit.fontawesome.com/63ff2cfeab.js" crossorigin="anonymous"></script>
   </head>
   <header>
     <nav>
       <ul>
         <li>
-          <a href="/">Logo</a>
+          <p> <%= link_to "Logo", root_path %></p>
         </li>
       </ul>
     </nav>

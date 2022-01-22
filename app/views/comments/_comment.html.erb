@@ -1,0 +1,19 @@
+<div class="comments-card-container">
+  <div class="card">
+    <h4>
+      <%= comment.user.name%>
+    </h4>
+    <p>
+      <%= comment.text %>
+    </p>
+  </div>
+  <div class="like">
+    <%= form_with url: user_post_likes_url(comment.user.id, @post.id), scope: :like do |form| %>
+      <%if @like%>
+        <i class="fas fa-heart"></i>
+      <%else%>
+        <%= form.submit "Like"%>
+      <%end%>
+    <%end%>
+  </div>
+</div>
