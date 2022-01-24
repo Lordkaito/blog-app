@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable, :confirmable
   has_many :posts
   has_many :comments
   has_many :likes
@@ -13,9 +17,4 @@ class User < ApplicationRecord
   def all_posts_from_user
     posts.order(created_at: :desc)
   end
-
-  User.create(name: 'Jhon', photo: 'Link to a photo',
-              bio: 'Lorem ipsum dolor sit amer, consectetur adipiscing ellit. Ut tempor turpis ac venenatis elementum, purus arcu fermentum orci, porta ultrices diam ex ut turpis. Vestibulum in elit sed est vehicula hendrerit. Nullam sit amet suscipit ante. Sed in accumsan lacus.', posts_counter: 2)
-  User.create(name: 'Peter', photo: 'Link to a photo',
-              bio: 'Lorem ipsum dolor sit amer, consectetur adipiscing ellit. Ut tempor turpis ac venenatis elementum, purus arcu fermentum orci, porta ultrices diam ex ut turpis.', posts_counter: 1)
 end
