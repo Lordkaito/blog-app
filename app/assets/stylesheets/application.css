@@ -13,3 +13,34 @@
  *= require_tree .
  *= require_self
  */
+
+
+.log-in-container{
+    margin-left: 35%;
+    align-items: center;
+}
+
+.field{
+    margin-top: 1rem;
+   
+}
+
+.input-field{
+    width: 25rem;
+    border: 1px black solid;
+    height: 2rem;
+}
+
+
+.log-in{
+    width: 25rem;
+    height: 2rem;
+    margin-top: 1rem;
+}
+
+.links{
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+
+}
