@@ -2,10 +2,6 @@
 <div>
   <p>
     <%= link_to "Create post", new_user_post_path(@user.id)%>
-    <%= link_to(destroy_user_session_path, {:class => "log-out", :method => :delete}) do  %>
-      <span class="sidebar-normal"> Logout </span>
-<% end %>
-
   </p>
 </div>
   <div class="user-container">
