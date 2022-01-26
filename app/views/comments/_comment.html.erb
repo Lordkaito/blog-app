@@ -15,5 +15,8 @@
         <%= form.submit "Like"%>
       <%end%>
     <%end%>
+    <% if can? :destroy, comment%>
+      <%= button_to 'delete', user_post_comment_path(post_id: @post.id ,id: comment.id), :method => :delete %>
+    <%end%>
   </div>
 </div>

@@ -43,6 +43,10 @@
             </div>
           <%end%>
       </div>
+      <%if can? :destroy, post %>
+        <%=button_to 'Delete post', {:controller => :posts, :action => 'destroy', :id => post.id}, :method => :delete %>
+      <%end%>
+
     </div>
   <% end %>
 
