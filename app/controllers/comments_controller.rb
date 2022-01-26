@@ -31,7 +31,6 @@ class CommentsController < ApplicationController
     flash[:success] = 'Comment was deleted!'
   end
 
-
   private
 
   def comment_params
