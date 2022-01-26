@@ -24,7 +24,6 @@
           <%= link_to 'Add comment', new_user_post_comment_path(@post.user.id, @post.id) %>
           </p>
         </div>
-        <%=button_to 'Delete', {:controller => :posts, :action => 'destroy', :id => @post.id}, :method => :delete%>
       </div>
     </div>
 </section>
