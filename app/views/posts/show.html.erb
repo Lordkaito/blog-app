@@ -21,6 +21,13 @@
               <%= render @post.comments%>
           </div>
           <p>
+          <% if can? :destroy, @post %>
+            <%= link_to user_post_path(current_user.id,@post.id), method: :delete do %>
+              <i class="fas fa-trash-alt"></i><span class="m-3 badge bg-danger">Delete</span>
+            <% end %>
+          <% end %>
+          </p>
+          <p>
           <%= link_to 'Add comment', new_user_post_comment_path(@post.user.id, @post.id) %>
           </p>
         </div>
