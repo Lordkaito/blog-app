@@ -14,14 +14,21 @@
     <nav>
       <ul>
         <li>
-          <p> <%= link_to "Logo", root_path %></p>
+          <% if user_signed_in? %>
+          <%= link_to 'Home', users_path%>
+          <%else%>
+          <%= link_to 'LogIn', new_user_session_path %>
+          <%end%>
         </li>
       </ul>
     </nav>
   </header>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
+
   </body>
 
   <footer>
