@@ -4,6 +4,11 @@ class PostsController < ApplicationController
     @posts = @user.recent_posts_from_user
   end
 
+  def show
+    @post = Post.find(params[:id])
+    @comments = @post.show_all_comments_from_user
+  end
+
   def new
     @user = User.find(params[:user_id])
     @post = Post.new
@@ -31,10 +36,15 @@ class PostsController < ApplicationController
     end
   end
 
-  def show
+  def destroy
     @post = Post.find(params[:id])
-    @comments = @post.show_all_comments_from_user
+    @post.destroy
+    @user = User.find(@post.user_id)
+    @user.posts_counter -= 1
+    @user.save
+    redirect_to "/users/#{current_user.id}", notice: 'Post was successfully destroyed.'
   end
+
 
   private
 

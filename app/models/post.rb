@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user
-  has_many :comments
-  has_many :likes
+  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   validates :title, presence: true, length: { maximum: 250 }
   validates :comments_counter, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
@@ -23,13 +23,4 @@ class Post < ApplicationRecord
   def udpate_post_counter_for_a_user
     user.update(posts_counter: user.posts.count)
   end
-
-  Post.create(title: 'Jhon first post', text: 'This is the first post made by Jhon', comments_counter: 2,
-              likes_counter: 0, user_id: 1)
-
-  Post.create(title: 'Jhon second post', text: 'This is the second post made by Jhon', comments_counter: 1,
-              likes_counter: 0, user_id: 1)
-
-  Post.create(title: 'Peter first post', text: 'This is the first post made by Peter', comments_counter: 0,
-              likes_counter: 0, user_id: 2)
 end
