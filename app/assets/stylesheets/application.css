@@ -1,3 +1,8 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+
 .log-in-container {
   margin-left: 35%;
   align-items: center;
