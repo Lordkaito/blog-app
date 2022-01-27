@@ -48,12 +48,8 @@ RSpec.describe 'Users page', type: :feature do
         end
 
         scenario 'all posts link' do
-
-
             click_link 'test1'
             expect(page).to have_current_path user_path(@test_user1)
-            
-
         end
 
 
