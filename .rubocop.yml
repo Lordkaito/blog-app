@@ -60,3 +60,5 @@ Style/HashTransformValues:
   Enabled: false
 Layout/LineLength:
   Max: 300
+Lint/UselessAssignment:
+  Enabled: false
