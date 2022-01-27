@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject { User.new(name: 'Jhon', photo: 'Link to a photo', bio: 'text', posts_counter: 2) }
+  subject { User.new(name: 'Jhon', photo: 'Link to a photo', bio: 'text', posts_counter: 2, email: 'test@email.com', password: 'test123') }
   before { subject.save }
 
   describe 'User model' do
@@ -11,11 +11,6 @@ RSpec.describe User, type: :model do
 
     it 'Should be invalid if no name given' do
       subject.name = nil
-      expect(subject).not_to be_valid
-    end
-
-    it 'Should be invalid if posts_counter is nil' do
-      subject.posts_counter = nil
       expect(subject).not_to be_valid
     end
   end

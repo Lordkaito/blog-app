@@ -5,13 +5,14 @@
 <div class="user-container">
     <div class="picture">
       <div class="empty-div">
+      <img src="<%= user.photo %>">
       </div>
     </div>
     <div class="user-name">
       <h1>
         <%= link_to user.name, user_path(user.id) %>
       </h1>
-      <p>
+      <p class="post_count">
         <%= user.posts_counter%>
       </p>
     </div>
