@@ -8,7 +8,7 @@ RSpec.describe Like, type: :model do
 
   describe 'update_like_counter_for_a_post' do
     it 'Should increment likes_counter by 1 each' do
-      @user2 = User.create!(name: 'Peter', photo: 'Link to photo', bio: 'Text', posts_counter: 1)
+      @user2 = User.create!(name: 'Peter', photo: 'Link to photo', bio: 'Text', posts_counter: 1, email: 'test@email.com', password: 'test123')
       @user2.likes.create!(post: subject)
       @user2.likes.create!(post: subject)
       @user2.likes.create!(post: subject)

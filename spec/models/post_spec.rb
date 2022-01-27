@@ -39,7 +39,7 @@ RSpec.describe Post, type: :model do
 
   describe 'Post methods' do
     it 'Should test the functionality of five_recent_posts' do
-      @user2 = User.create!(name: 'Peter', photo: 'Link to photo', bio: 'Text', posts_counter: 1)
+      @user2 = User.create!(name: 'Peter', photo: 'Link to photo', bio: 'Text', posts_counter: 1, email: 'test@email.com', password: 'test123')
       first_comment = @user2.comments.create!(text: 'First comment made by Peter', post: subject)
       second_comment = @user2.comments.create!(text: 'Second comment made by Peter', post: subject)
       third_comment = @user2.comments.create!(text: 'Third comment made by Peter', post: subject)
@@ -49,10 +49,6 @@ RSpec.describe Post, type: :model do
       total_comments = subject.recent_comments_from_user
       expect(total_comments.length).to eql 5
       expect(total_comments).to match_array([fifth_comment, fourth_comment, third_comment, second_comment, first_comment])
-    end
-
-    it 'Should test the functionality of the update_posts_counter' do
-      expect(subject.user.posts_counter).to eql 1
     end
   end
 end

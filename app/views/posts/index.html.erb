@@ -2,6 +2,7 @@
   <div class="user-container">
     <div class="picture">
       <div class="empty-div">
+        <p> <%= @user.photo %> </p>
       </div>
     </div>
     <div class="user-name">
@@ -49,5 +50,6 @@
 
     </div>
   <% end %>
+    <p> <%= link_to "See all posts", user_posts_path(@user.id) %></p>
 
 </section>

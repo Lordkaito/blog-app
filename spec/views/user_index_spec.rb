@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Users page', type: :feature do
-
     before(:each) do
         visit user_session_path
 
@@ -9,7 +8,6 @@ RSpec.describe 'Users page', type: :feature do
         test_user2 = User.create(name: 'test2', photo: 'test_photo2', bio: 'text2', posts_counter: 3, email:"test2@gmail.com",password:"test22")
         test_user3 = User.create(name: 'test3', photo: 'test_photo3', bio: 'text3', posts_counter: 5, email:"test3@gmail.com",password:"test33")
         test_user4 = User.create(name: 'test4', photo: 'test_photo4', bio: 'text4', posts_counter: 4, email:"test4@gmail.com",password:"test44")
-        
 
         fill_in 'Email', with: 'test1@gmail.com'
         fill_in 'Password', with: 'test11'
@@ -39,8 +37,7 @@ RSpec.describe 'Users page', type: :feature do
         scenario 'displays the correct number of posts' do
             posts = page.all('.post_count')
 
-             expect(posts.size).to eq 4
-
+            expect(posts.size).to eq 4
             expect(posts[0]).to have_content "2"
             expect(posts[1]).to have_content "3"
             expect(posts[2]).to have_content "5"
@@ -51,9 +48,5 @@ RSpec.describe 'Users page', type: :feature do
             click_link 'test1'
             expect(page).to have_current_path user_path(@test_user1)
         end
-
-
     end
-    
-
-  end
+end

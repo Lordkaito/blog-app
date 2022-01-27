@@ -70,7 +70,7 @@ end
 
 group :development, :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
