@@ -1,5 +1,9 @@
 class User < ApplicationRecord
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :confirmable
+  devise :database_authenticatable,
+  :jwt_authenticatable,
+  :registerable,
+  jwt_revocation_strategy: JwtDenylist
+
   has_many :posts
   has_many :comments
   has_many :likes
