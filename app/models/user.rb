@@ -1,7 +1,11 @@
 class User < ApplicationRecord
+  include Devise::JWT::RevocationStrategies::JTIMatcher
+
+  
   devise :database_authenticatable,
   :jwt_authenticatable,
   :registerable,
+  :confirmable,
   jwt_revocation_strategy: JwtDenylist
 
   has_many :posts
