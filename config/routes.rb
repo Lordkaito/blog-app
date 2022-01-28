@@ -8,8 +8,6 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
-  default_url_options host: 'localhost:3000'
-
   devise_scope :user do get '/users/sign_out' => 'devise/sessions#destroy' end
   resources :users, only: [:index, :show] do
     resources :posts, only: [:index, :new, :create, :show, :destroy] do
